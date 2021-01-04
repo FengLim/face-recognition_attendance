@@ -1,0 +1,48 @@
+{% extends 'student_template/base_template.html' %}
+{% block page_title %}
+Show Profile
+{% endblock page_title %}
+{% block main_content %}
+
+<section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+
+            <!-- Profile Image -->
+            <div class="card card-primary card-outline">
+              <div class="card-body box-profile">
+
+                <h3 class="profile-username text-center">{{ user.username }}</h3>
+
+                <p class="text-muted text-center">Software Engineer</p>
+
+                <ul class="list-group list-group-unbordered mb-3">
+                  <li class="list-group-item">
+                    <b>First Name</b> <a class="float-right">{{ user.first_name }}</a>
+                  </li>
+                  <li class="list-group-item">
+                    <b>Last Name</b> <a class="float-right">{{ user.last_name }}</a>
+                  </li>
+                  <li class="list-group-item">
+                    <b>address</b> <a class="float-right">{{ student.address }}</a>
+                  </li>
+                  <li class="list-group-item">
+                    <b>gender</b> <a class="float-right">{{ student.gender }}</a>
+                  </li>
+                  <li class="list-group-item">
+                    <b>profile_picture</b> <a class="float-right">{{ student.profile_pic }}</a>
+                  </li>
+                </ul>
+
+                <a href="/edit_account/{{ student.admin.id }}" class="btn btn-primary btn-block"><b>Edit</b></a>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+        </div>
+        <!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </section>
+{% endblock main_content %}
